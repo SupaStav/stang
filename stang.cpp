@@ -8,7 +8,11 @@ int main(int argc, char* argv[])
         return -1;
 
     //Debugging must run every time regardless of what the clarification is.
-    debug(pkg);
+    int debgstat = debug(pkg);
+    if (debgstat != 0)
+    {
+        return debgstat;
+    }
 
     if(pkg.clarif == pkg.RUN)
     {

@@ -1,7 +1,7 @@
 build: check.o stang.o debug.o run.o parse.o
-	g++ -o main check.o stang.o debug.o run.o parse.o utility.o
+	g++ -o main check.o stang.o debug.o run.o parse.o utility.o types.o
 
-parsevar.o: parse/variable/parsevar.h parse/variable/parsevar.cpp
+parse.o: parse/variable/parsevar.h parse/variable/parsevar.cpp
 	g++ -c parse/variable/parsevar.cpp -o parse.o
 
 check.o: check/check.cpp
@@ -18,3 +18,6 @@ run.o: run/run.cpp
 
 utility.o: utility/strutil/strutil.h utility/strutil/strutil.cpp
 	g++ -c utility/strutil/strutil.cpp -o utility.o
+
+types.o: types/var.cpp types/var.h
+	g++ -c types/var.cpp -o types.o

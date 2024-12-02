@@ -10,8 +10,13 @@ enum vartype
     VAR_STRING = 4
 };
 
+
 struct variable
 {
     void *data; //this is dangerous
+    char* name;
     int vartype; //of enum vartype
 };
+
+
+void cleanvar(variable var);

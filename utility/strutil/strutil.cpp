@@ -3,6 +3,8 @@
 // stack overflow https://stackoverflow.com/questions/9210528/split-string-with-delimiters-in-c
 char** str_split(char* a_str, const char a_delim)
 {
+    
+    printf("d\n");
     char** result    = 0;
     size_t count     = 0;
     char* tmp        = a_str;
@@ -11,6 +13,7 @@ char** str_split(char* a_str, const char a_delim)
     delim[0] = a_delim;
     delim[1] = 0;
 
+    
     /* Count how many elements will be extracted. */
     while (*tmp)
     {

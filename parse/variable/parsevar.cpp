@@ -3,14 +3,15 @@
 variable varparse(char* funcstring)
 {
     variable var;
-    char** assignment = str_split(funcstring, '=');
+    
 
+    //THIS NEEDS TO BE FIXED
+    char** assignment = str_split(funcstring, '=');
+    
     char* value = assignment[1];
 
-
-
     remove_all_chars(value, ' ');
-
+    //---
 
     //TODO : Handle arrays
 
@@ -27,9 +28,7 @@ variable varparse(char* funcstring)
         //put it in the heap but dont free it
         int* tmp = (int*)malloc(sizeof(int));
         *tmp = atoi(value);
-
-        var.data = &tmp;
-
+        var.data = tmp;
         return var;
     } else if (strstr(assignment[0], "float") != NULL)
     {
